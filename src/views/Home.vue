@@ -1,17 +1,43 @@
 <template>
   <div class="home">
-    <Splash msg="Welcome to Your Vue.js App" />
+    <div class="empty-panel"></div>
+    <ContentPanel />
+    <UserPanel />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Splash from "@/components/Splash.vue";
+import UserPanel from "@/components/UserPanel.vue";
+import ContentPanel from "@/components/ContentPanel.vue";
 
 export default {
   name: "Home",
   components: {
-    Splash
+    UserPanel,
+    ContentPanel
   }
 };
 </script>
+
+<style>
+.home {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.user-panel {
+  width: 20%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.content-panel {
+  width: 60%;
+}
+
+.empty-panel {
+  width: 20%;
+}
+</style>
